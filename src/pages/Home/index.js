@@ -43,16 +43,30 @@ export default function Home() {
     const res = await fetch(`https://api.imgflip.com/caption_image?${params}`)
     const { data: { url } } = await res.json();
 
-    setGeneratedMeme(url);
+    setGeneratedMeme(url); 
+  }
 
-    console.log(url);
-
+  function handleReset() {
+    setSelectedTemplate(null);
+    setBoxes([]);
+    setGeneratedMeme(null);
   }
 
   return (
     <Wrapper>
       <Title>MemeMaker</Title><Image src={logo}></Image>
       <Card>
+        {generatedMeme && (
+          <>
+            <img src={generatedMeme} alt={generatedMeme} />
+            <Button 
+            type="submit"
+            onClick={handleReset}
+            >
+              Criar outro meme
+            </Button>
+          </>
+        )}
         {!generatedMeme && (
           <>
             <h2>Selecione um Template:</h2>
@@ -80,7 +94,7 @@ export default function Home() {
                       onChange={handleInputChange(index)}
                     />
                   ))}
-                  <Button type="submit">MakeMeme!</Button>
+                  <Button type="submit">Gerar Meme</Button>
                 </Form>
               </>
             )}

@@ -19,7 +19,7 @@ export const Title = styled.h1`
 
 export const Card = styled.div`
   background: #fff;
-  width: 500px;
+  width: 550px;
   border-radius: 8px;
   padding: 20px;
   margin-top: 15px;
@@ -28,7 +28,7 @@ export const Card = styled.div`
   h2 {
     font-size: 22px;
     color: #392D2D;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -49,13 +49,12 @@ export const Templates = styled.div`
     border: 2px solid transparent;
 
     &.selected {
-    border-color: #4395D8;
-  }
+      border-color: #4395D8;
+    }
 
     img {
-      width: 55px;
-      height: 55px;
-
+      width: 53px;
+      height: 53px;
     }
   }
 `;
@@ -66,6 +65,7 @@ export const Form = styled.form`
     height: 40px;
     border-radius: 8px;
     border: 1px solid #DBDBDB;
+    padding: 0 15px;
     font-size: 14px;
     margin-bottom: 10px;
   }
@@ -79,7 +79,7 @@ export const Button = styled.button`
   background: #4395D8;
   color: #fff;
   font-weight: bold; 
-  transition: background 0.2s ease-in; 
+  transition: background 0.3s ease-in; 
   font-size: 14px;
   border: 2px solid transparent;
 
