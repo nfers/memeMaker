@@ -23,6 +23,11 @@ export default function Home() {
     setBoxes(newValues);
   }
 
+  function handleSelectedTemplate(template) {
+    setSelectedTemplate(template);
+    setBoxes([]);
+  }
+
   function handleSubmit(e) {
     e.preventDefault()
     console.log(boxes)
@@ -38,7 +43,7 @@ export default function Home() {
             <button
               key={template.id}
               type="button"
-              onClick={() => setSelectedTemplate(template)}
+              onClick={() => handleSelectedTemplate(template)}
               className={template.id === selectedTemplate?.id ? 'selected' : ''}
             >
               <img src={template.url} alt={template.name} />
