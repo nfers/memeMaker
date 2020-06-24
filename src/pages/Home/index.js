@@ -69,7 +69,7 @@ export default function Home() {
         )}
         {!generatedMeme && (
           <>
-            <h2>Selecione um Template:</h2>
+            <h2>Selecione a imagem:</h2>
             <Templates>
               {templates.map((template) => (
                 <button
@@ -90,7 +90,7 @@ export default function Home() {
                   {(new Array(selectedTemplate.box_count)).fill('').map((_, index) => (
                     <input
                       key={String(Math.random())}
-                      placeholder={`Text #${index + 1}`}
+                      placeholder={`informe seu texto #${index + 1}`}
                       onChange={handleInputChange(index)}
                     />
                   ))}
@@ -98,7 +98,6 @@ export default function Home() {
                 </Form>
               </>
             )}
-
           </>
         )}
       </Card>
